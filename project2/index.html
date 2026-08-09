@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>j5 SpeechTrack｜Dory UI/UX Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Dory · UI/UX Portfolio</a>
+
+    <a class="pill dark" href="../index.html#works">Back to Portfolio</a>
+
+    <button class="menu-button" type="button" aria-label="Open menu">
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero section">
+      <div class="hero-content reveal">
+        <p class="eyebrow">2021~2023</p>
+
+        <h1>
+          <span>雲端發票 App</span>
+          <span>中獎分享功能</span>
+        </h1>
+
+        <p class="hero-description">
+          雲端發票是一款以「環保生活、便利消費」為訴求的電子發票APP。
+          透過用戶回饋與訪談，並經常與RD、PM Brainstorming出新的設計與想法，慢慢優化並精進App，努力設計出滿足各種需求的功能，共同目標就是為用戶打造便利、環保的消費生活。
+        </p>
+
+        <div class="tags">
+          <span>UR</span>
+          <span>UX 設計</span>
+          <span>UI 設計</span>
+          <span>優化流程</span>
+        </div>
+      </div>
+
+      <div class="hero-image reveal">
+        <img src="project2_photo/project2-1.png" alt="雲端發票" />
+      </div>
+    </section>
+
+    <section id="problem" class="section problem-section reveal">
+      <p class="eyebrow">中獎分享功能-優化流程</p>
+
+      <ul class="large-list">
+        <p>為了達到產品aarrr漏斗，透過既有用戶用中獎的爽感，運用推薦機制來擴散吸引潛在用戶下載。思考方向：</p>
+        <p>1.如何引誘分享?</p>
+        <p>2.分享會透過那些平台管道?（ta25~35女性）</p>
+        <p>3.留意圖片要用陌生用戶知道是雲端發票APP (須留意選擇悖論:不讓用戶有超過2~3個選擇)</p>
+        <p>4.思考放置入口</p>
+      </ul>
+     
+      <!--
+        wide-image 現在支援自動輪播：
+        只要在同一個 div 裡繼續加入 img，例如：
+        <img src="你的第二張圖片.png" alt="" />
+        <img src="你的第三張圖片.png" alt="" />
+        有 2 張以上時會自動出現左右按鈕、圓點並自動播放。
+      -->
+      <div class="wide-image">
+        <img src="project2_photo/project2-2.png" />
+        <img src="project2_photo/project2-2-1.png" />
+      </div>
+       <ul class="large-list">
+        → 先將功能出現的入口統整，並繪製簡易的Flow，再根據功能進行Wireframe流程繪製。
+      </ul>
+      
+      <div class="wide-image">
+        <img src="project2_photo/project2-3.png" />
+        <img src="project2_photo/project2-3-1.png" />
+      </div>
+      <ul class="large-list">
+        → 分享圖則以可吸引User目光的高彩度設計為主，期望User可將中獎喜悅透過社群軟體分享出去，並順便帶入新用戶下載流量！
+      </ul>
+    </section>
+
+    <section id="highlights" class="section highlights-section reveal">
+      <p class="eyebrow">數據分析</p>
+
+      <div class="highlight-content">
+        <ul class="large-list">
+        <p>觀察2021年11/25~11/26和1/25~1/26 Google Analytics開獎分享數據:</p>
+        <p>1.點擊開獎分享相關功能的人數成長7.63%。</p>
+        <p>2.開獎分享11/17上線，總分享點擊數成效成長高達246%，且越接近25號開獎期間成效越好。</p>
+        <p>3.分享短網址的點擊分享總計30,934次，點擊導下載網址總計4,145次，轉換率達13.43%。分享出去網址導下載成效跟上期相比點擊成長「2倍」  (iOS:Android=8:2)。</p>
+      </ul>
+      </div>
+
+      <div class="wide-image">
+        <img src="project2_photo/project2-4.png" />
+      </div>
+    </section>
+
+    <section id="highlights" class="section highlights-section reveal">
+    <ul class="large-list">
+        <p>因App開獎對獎中狀態切換速度過快，努力錯覺理論會造成User在使用上不確定到底有沒有對獎。</p>
+        <p>因此優化版本將對獎UX流程重新整理，並製作UI動畫，增加趣味性，以及將對獎時的顯示速度進行調整，讓CTA在畫面上更明顯！</p>
+      </ul>
+      <div class="gallery-grid">
+        <figure class="full">
+          <img src="project2_photo/project2-5.gif" />
+          <img src="project2_photo/project2-6.png" />
+        </figure>
+      </div>
+    </section>
+
+
+    <nav class="case-pagination reveal" aria-label="Project pagination">
+      <a class="page-control" href="../index.html#works">
+        <span>← Back</span>
+        <strong>Portfolio Works</strong>
+      </a>
+
+      <a class="page-control disabled" href="#" aria-disabled="true">
+        <span>Previous</span>
+        <strong>No previous case</strong>
+      </a>
+
+      <a class="page-control disabled" href="#" aria-disabled="true">
+        <span>Next</span>
+        <strong>Coming soon</strong>
+      </a>
+    </nav>
+
+  </main>
+
+  <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

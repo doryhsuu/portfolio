@@ -1,0 +1,1349 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #1a1a1a;
+  background: #eeeeee;
+  font-family: Inter, "Noto Sans TC", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(20px);
+  opacity: 0.34;
+  pointer-events: none;
+}
+
+body::before {
+  width: 48vw;
+  height: 42vw;
+  top: -12vw;
+  right: -18vw;
+  background: radial-gradient(circle, rgba(0, 166, 255, 0.45), transparent 68%);
+}
+
+body::after {
+  width: 46vw;
+  height: 42vw;
+  left: -18vw;
+  bottom: -18vw;
+  background: radial-gradient(circle, rgba(255, 138, 61, 0.32), transparent 68%);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-header {
+  position: sticky;
+  top: 40px;
+  z-index: 20;
+  width: min(1280px, calc(100% - 48px));
+  height: 76px;
+  margin: 40px auto 0;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  border: 1px solid #e8ded1;
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.92);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  margin-right: auto;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  color: #5f5a52;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.desktop-nav a:hover {
+  color: #a66a2a;
+}
+
+.pill {
+  min-height: 44px;
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
+.dark {
+  color: #ffffff;
+  background: #171717;
+}
+
+.menu-button {
+  display: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+main {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.eyebrow {
+  margin: 0 0 28px;
+  color: #a66a2a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* 第一屏：圖片延伸到右側，壓在文字下方，不裁切 */
+.hero {
+  position: relative;
+  display: block;
+  min-height: 820px;
+  padding-top: 115px;
+  padding-bottom: 72px;
+  overflow: visible;
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(520px, 46%);
+  max-width: 520px;
+}
+
+
+.hero h1 {
+  margin: 0 0 28px;
+  font-size: clamp(48px, 5vw, 64px);
+  line-height: 1.18;
+  letter-spacing: -0.06em;
+}
+
+.hero h1 span {
+  display: block;
+}
+
+.hero-description {
+  max-width: 520px;
+  margin: 0;
+  padding-left: 0%;
+  color: #616161;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.tags {
+  position: relative;
+  z-index: 3;
+  margin-top: 48px;
+}
+
+.tags span {
+  min-height: 36px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e8ded1;
+  border-radius: 999px;
+  color: #4b3a2a;
+  background: #f5f1ea;
+  font-size: 12px;
+  font-weight: 700;
+  
+}
+
+.hero-image {
+  position: absolute;
+  z-index: 1;
+  left: 300px;
+  top: 0;
+  width: calc(100vw - 260px);
+  height: auto;
+  margin-right: 0;
+  border-radius: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: center center;
+  transform: none;
+}
+
+.problem-section {
+  border-top: 1px solid rgba(232, 222, 209, 0.8);
+}
+
+.large-list {
+  margin: 0;
+  padding-left: 0%;
+  color: #616161;
+  font-size: 18px;
+  line-height: 2;
+}
+
+.two-column-images {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1.06fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+figure {
+  margin: 0;
+}
+
+.two-column-images figure {
+  height: 545px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #dddddd;
+}
+
+.two-column-images figure:first-child img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: left center;
+}
+
+
+.two-column-images figure:last-child img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: right center;
+}
+
+/* 數據分析區的圖片：維持圖片原始尺寸並置中 */
+.highlights-section > .wide-image {
+  width: fit-content;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible;
+  mix-blend-mode: normal;
+}
+
+.highlights-section > .wide-image img {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: auto;
+}
+
+.highlight-content {
+  max-width: 1200px;
+  color: #616161;
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.highlight-content ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.highlight-content li {
+  margin-bottom: 22px;
+}
+
+.highlight-content strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #303030;
+}
+
+.highlight-content span {
+  display: block;
+}
+
+.wide-image {
+  margin-top: 54px;
+  border-radius: 10px;
+  overflow: hidden;
+  mix-blend-mode: multiply;
+}
+
+.wide-image img {
+  width: 100%;
+  height: auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 40px;
+}
+
+.gallery-grid figure {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #dddddd;
+}
+
+.gallery-grid figure.full {
+  grid-column: 1 / -1;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-grid figure.full img {
+  height: auto;
+}
+
+.contact-section {
+  margin-bottom: 70px;
+  padding: 70px 90px;
+  border: 1px solid #e8ded1;
+  border-radius: 28px;
+  background: rgba(255, 253, 249, 0.66);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.contact-section h2 {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  z-index: 30;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #171717;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: 0.2s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 90px;
+  }
+
+  .hero-image {
+    margin-right: 0;
+  }
+
+  .hero-image img {
+    transform: none;
+  }
+
+  .two-column-images {
+    grid-template-columns: 1fr;
+  }
+
+  .two-column-images figure,
+  .two-column-images figure:first-child,
+  .two-column-images figure:last-child {
+    height: auto;
+  }
+
+  .two-column-images figure:first-child img,
+  .two-column-images figure:last-child img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-position: center;
+  }
+}
+
+@media (max-width: 980px) {
+  .site-header {
+    top: 24px;
+    height: 64px;
+    padding: 0 22px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .desktop-nav,
+  .site-header > .pill {
+    display: none;
+  }
+
+  .menu-button {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    gap: 4px;
+    border: 1px solid #e8ded1;
+    border-radius: 50%;
+    background: #fffdf9;
+    cursor: pointer;
+  }
+
+  .menu-button span {
+    width: 18px;
+    height: 2px;
+    display: block;
+    border-radius: 99px;
+    background: #171717;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    inset: 104px 24px auto;
+    z-index: 19;
+    display: grid;
+    gap: 6px;
+    padding: 18px;
+    border: 1px solid #e8ded1;
+    border-radius: 22px;
+    background: #fffdf9;
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: 0.2s ease;
+  }
+
+  .mobile-nav.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobile-nav a {
+    padding: 14px 16px;
+    border-radius: 14px;
+    color: #5f5a52;
+    font-weight: 800;
+  }
+
+  main {
+    width: min(100% - 32px, 720px);
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .large-list {
+    line-height: 2;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-section {
+    padding: 44px 26px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    width: calc(100% - 32px);
+    margin-top: 24px;
+  }
+
+  .hero {
+    padding-top: 70px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-description,
+  .large-list,
+  .highlight-content {
+    font-size: 16px;
+  }
+
+  .tags span {
+    min-height: 34px;
+    padding: 0 14px;
+  }
+
+  .gallery-grid {
+    gap: 22px;
+  }
+}
+
+
+.case-pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+  margin: 20px 0 90px;
+}
+
+.page-control {
+  min-height: 112px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #e8ded1;
+  border-radius: 24px;
+  background: rgba(255, 253, 249, 0.72);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.06);
+  transition: 0.2s ease;
+}
+
+.page-control:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.10);
+}
+
+.page-control span {
+  margin-bottom: 8px;
+  color: #a66a2a;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.page-control strong {
+  color: #171717;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.page-control.disabled {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+
+@media (max-width: 760px) {
+  .case-pagination {
+    grid-template-columns: 1fr;
+    margin-bottom: 60px;
+  }
+
+  .page-control {
+    min-height: 90px;
+  }
+}
+
+
+/* SpeechTrack project：第一屏圖片修正版
+   電腦版：圖片完整延伸到右側，壓在文字下方，不裁切
+   平板 / 手機版：圖片移到文字下方排列
+*/
+.hero {
+  position: relative;
+  display: block;
+  min-height: 820px;
+  padding-top: 115px;
+  padding-bottom: 72px;
+  overflow: visible;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(520px, 46%);
+  max-width: 520px;
+}
+
+.hero-description {
+  max-width: 520px;
+}
+
+.tags {
+  position: relative;
+  z-index: 3;
+  margin-top: 48px;
+}
+
+.hero-image {
+  position: absolute;
+  z-index: 1;
+  left: 300px;
+  top: 0;
+  width: calc(100vw - 260px);
+  height: auto;
+  margin-right: 0;
+  border-radius: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: center center;
+  transform: none;
+}
+
+/* 平板以下：改成上下排列，避免圖片壓到文字 */
+@media (max-width: 1100px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    min-height: auto;
+    padding-top: 90px;
+    padding-bottom: 72px;
+    overflow: visible;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .hero-description {
+    max-width: 620px;
+  }
+
+  .hero-image {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    overflow: visible;
+    pointer-events: auto;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center center;
+    transform: none;
+  }
+}
+
+/* 手機版：圖片滿寬排在文字下方，不裁切、不偏移 */
+@media (max-width: 1100px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    min-height: auto;
+    padding-top: 90px;
+    overflow: visible;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .hero-image {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    border-radius: 24px;
+    pointer-events: auto;
+  }
+
+  .hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transform: none;
+  }
+}
+
+
+/* 只修正第一張 project1_photo/project1-1：
+   置頂、壓在 header 後面、上/左/右貼齊畫面。
+   其他圖片區塊不變。
+*/
+
+/* header 有 margin-top: 40px + height: 76px，
+   這裡把 hero 往上拉 116px，讓第一張圖貼齊畫面最上方。 */
+.hero {
+  position: relative;
+  display: block;
+  min-height: 820px;
+  margin-top: -116px;
+  padding-top: 231px;
+  padding-bottom: 72px;
+  overflow: visible;
+}
+
+/* 文字保持在圖片上方，但仍在 header 下方 */
+.hero > .hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(520px, 46%);
+  max-width: 520px;
+}
+
+/* 第一張圖：貼齊畫面上、左、右，並放在 header 後面 */
+.hero > .hero-image {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: calc((100vw - 100%) / -2);
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  border-radius: 0;
+  overflow: visible;
+  transform: none;
+  pointer-events: none;
+}
+
+/* 第一張圖等比例滿版，不拉伸、不使用 cover 裁切 */
+.hero > .hero-image img {
+  display: block;
+  width: 100vw;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: top center;
+  transform: none;
+}
+
+/* 確保 header 疊在第一張圖上方 */
+.site-header {
+  position: sticky;
+  z-index: 20;
+}
+
+/* 平板以下：第一張圖改到文字下方，不再壓在 header 後面 */
+@media (max-width: 1100px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    min-height: auto;
+    margin-top: 0;
+    padding-top: 90px;
+    padding-bottom: 72px;
+    overflow: visible;
+  }
+
+  .hero > .hero-content {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .hero > .hero-image {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-radius: 24px;
+    overflow: visible;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .hero > .hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: top center;
+    transform: none;
+  }
+}
+
+/* 手機版：第一張圖維持在文字下方，滿寬不偏移 */
+@media (max-width: 640px) {
+  .hero {
+    gap: 30px;
+    padding-top: 70px;
+    padding-bottom: 56px;
+  }
+
+  .hero > .hero-content {
+    width: 100%;
+  }
+
+  .hero > .hero-image {
+    border-radius: 16px;
+  }
+}
+
+
+/* 修正手機版 header：顯示 Back to Portfolio，不顯示 menu icon */
+@media (max-width: 980px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .site-header > .pill {
+    display: inline-flex !important;
+    min-height: 40px;
+    padding: 0 18px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .menu-button {
+    display: none !important;
+  }
+
+  .menu-button span {
+    display: none !important;
+  }
+
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    gap: 12px;
+  }
+
+  .brand {
+    max-width: 150px;
+    overflow: hidden;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .site-header > .pill {
+    min-height: 36px;
+    padding: 0 14px;
+    font-size: 12px;
+  }
+}
+
+
+/* 修正 1920x1080：避免第一張 hero 圖擋到 Background of the Problem
+   只調整第一屏 hero 的高度，不影響其他圖片左右排版。
+*/
+@media (min-width: 1101px) {
+  .hero {
+    min-height: 100vh;
+  }
+}
+
+/* 大螢幕時預留一點安全距離，避免第一張圖底部剛好壓到下一段標題 */
+@media (min-width: 1440px) {
+  .hero {
+    min-height: calc(100vh + 80px);
+  }
+}
+
+/* 平板與手機仍維持圖片移到文字下方 */
+@media (max-width: 1100px) {
+  .hero {
+    min-height: auto;
+  }
+}
+
+
+/* 強制預留第一張 hero 圖片高度，避免蓋到 Background of the Problem
+   只影響第一屏 hero / project1_photo/project1-1。
+   其他 two-column-images、wide-image、gallery-grid 不變。
+*/
+@media (min-width: 1101px) {
+  .hero {
+    /*
+      第一張圖是 width: 100vw / height: auto / position: absolute，
+      不會自動撐開 .hero 高度。
+      這裡用視窗寬度預留圖片高度，1920px 寬時約保留 1248px 高度。
+    */
+    min-height: max(1180px, calc(100vw * 0.65));
+    margin-top: -116px;
+    padding-top: 231px;
+    padding-bottom: 120px;
+    overflow: visible;
+  }
+
+  .hero > .hero-image {
+    top: 0;
+    left: calc((100vw - 100%) / -2);
+    width: 100vw;
+    height: auto;
+  }
+
+  .hero > .hero-image img {
+    width: 100vw;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+    object-position: top center;
+    transform: none;
+  }
+
+  .problem-section {
+    position: relative;
+    z-index: 2;
+    clear: both;
+  }
+}
+
+/* 更高解析桌機再多留一點空間 */
+@media (min-width: 1600px) {
+  .hero {
+    min-height: max(1280px, calc(100vw * 0.66));
+  }
+}
+
+/* 平板 / 手機不使用絕對定位，圖片回到文字下方 */
+@media (max-width: 1100px) {
+  .hero {
+    min-height: auto;
+    margin-top: 0;
+    padding-top: 90px;
+    padding-bottom: 72px;
+  }
+
+  .hero > .hero-image {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .hero > .hero-image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+/* 調整第一張圖到 Background of the Problem 的間距為 110px
+   只影響第一屏 project1_photo/project1-1 與下一段的間距。
+   其他圖片區塊不變。
+*/
+@media (min-width: 1101px) {
+  .hero {
+    /*
+      第一張圖為 width: 100vw / height: auto。
+      這裡用圖片高度比例 + 20px，搭配 .problem-section 的 padding-top: 90px，
+      讓圖片底部到 Background of the Problem 文字約為 110px。
+    */
+    min-height: calc(100vw * 0.66 + 20px);
+    margin-top: -116px;
+    padding-top: 231px;
+    padding-bottom: 0;
+    overflow: visible;
+  }
+
+  .problem-section {
+    position: relative;
+    z-index: 2;
+    padding-top: 90px;
+  }
+}
+
+/* 1920px 以上不要再額外拉太高，避免空白過大 */
+@media (min-width: 1600px) {
+  .hero {
+    min-height: calc(100vw * 0.66 + 20px);
+  }
+}
+
+/* 平板 / 手機維持原本上下排列 */
+@media (max-width: 1100px) {
+  .hero {
+    min-height: auto;
+    margin-top: 0;
+    padding-top: 90px;
+    padding-bottom: 72px;
+  }
+
+  .problem-section {
+    padding-top: 72px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 70px;
+    padding-bottom: 56px;
+  }
+}
+
+
+/* 補回 Design Highlights 上方分隔線 */
+.highlights-section {
+  border-top: 1px solid rgba(232, 222, 209, 0.8);
+}
+
+/* =========================================================
+   Design Highlights 圖片置中 + RWD 修正版
+   桌機：維持圖片原始尺寸並置中
+   平板 / 手機：圖片過大時自動縮小，並保持水平置中
+   ========================================================= */
+
+/* 桌機 */
+.highlights-section > .wide-image {
+  width: fit-content;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible;
+  mix-blend-mode: normal;
+}
+
+.highlights-section > .wide-image img {
+  display: block;
+  width: auto;
+  max-width: none;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 平板以下 */
+@media (max-width: 1100px) {
+  .highlights-section > .wide-image {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+  }
+
+  .highlights-section > .wide-image img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 手機 */
+@media (max-width: 640px) {
+  .highlights-section > .wide-image {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .highlights-section > .wide-image img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* =========================================================
+   wide-image 自動輪播
+   使用方式：
+   同一個 .wide-image 內放 2 張以上 <img> 即自動啟用輪播。
+   單張圖片維持原本樣式。
+   ========================================================= */
+
+.wide-image.is-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  mix-blend-mode: normal;
+  touch-action: pan-y;
+}
+
+/* 覆蓋 highlights-section 原本的 fit-content，輪播容器改為完整可用寬度 */
+.highlights-section > .wide-image.is-carousel {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.wide-carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.wide-carousel-track {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.wide-carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 輪播中的圖片保持原始比例、置中；過大時才縮小 */
+.wide-image.is-carousel .wide-carousel-slide img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* 左右切換按鈕 */
+.wide-carousel-button {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  display: none;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgba(23, 23, 23, 0.58);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  font: inherit;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.wide-carousel-button:hover {
+  background: rgba(23, 23, 23, 0.78);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.wide-carousel-button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+
+.wide-carousel-prev {
+  left: 18px;
+}
+
+.wide-carousel-next {
+  right: 18px;
+}
+
+/* 下方圓點 */
+.wide-carousel-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(23, 23, 23, 0.28);
+  transform: translateX(-50%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.wide-carousel-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.52);
+  cursor: pointer;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+
+.wide-carousel-dot.is-active {
+  width: 22px;
+  background: #ffffff;
+}
+
+/* 平板 / 手機 RWD */
+@media (max-width: 1100px) {
+  .wide-image.is-carousel,
+  .highlights-section > .wide-image.is-carousel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .wide-image.is-carousel .wide-carousel-slide img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .wide-carousel-button {
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+
+  .wide-carousel-prev {
+    left: 10px;
+  }
+
+  .wide-carousel-next {
+    right: 10px;
+  }
+
+  .wide-carousel-dots {
+    bottom: 10px;
+    gap: 6px;
+    padding: 6px 8px;
+  }
+
+  .wide-carousel-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .wide-carousel-dot.is-active {
+    width: 18px;
+  }
+}
+
+/* 使用者偏好減少動畫時，取消滑動動畫 */
+@media (prefers-reduced-motion: reduce) {
+  .wide-carousel-track {
+    transition: none;
+  }
+}
+
+
+
+/* =========================================================
+   wide-image 輪播：目前圖片高度同步修正
+   - 圓點保留原本樣式
+   - 固定在目前顯示圖片內，距底部 32px
+   - 不同高度圖片切換時，viewport 高度會由 JS 同步更新
+   ========================================================= */
+
+.wide-carousel-track {
+  align-items: flex-start;
+}
+
+.wide-carousel-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wide-image.is-carousel .wide-carousel-dots {
+  bottom: 32px;
+}
+
+/* RWD 也維持距目前圖片底部 32px */
+@media (max-width: 1100px) {
+  .wide-image.is-carousel .wide-carousel-dots {
+    bottom: 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .wide-image.is-carousel .wide-carousel-dots {
+    bottom: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wide-carousel-viewport {
+    transition: none;
+  }
+}
