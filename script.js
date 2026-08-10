@@ -39,3 +39,46 @@ const observer = new IntersectionObserver(
 document.querySelectorAll('.reveal').forEach((element) => {
   observer.observe(element);
 });
+
+/* Header：往下滑隱藏、往上滑顯示 */
+const siteHeader = document.querySelector('.header');
+
+let lastScrollY = window.scrollY;
+let headerTicking = false;
+const scrollThreshold = 12;
+
+function updateHeaderVisibility() {
+  if (!siteHeader) {
+    headerTicking = false;
+    return;
+  }
+
+  const currentScrollY = window.scrollY;
+  const scrollDifference = currentScrollY - lastScrollY;
+
+  if (currentScrollY <= 80) {
+    siteHeader.classList.remove('header-hidden');
+    lastScrollY = currentScrollY;
+  } else if (Math.abs(scrollDifference) >= scrollThreshold) {
+    if (scrollDifference > 0) {
+      siteHeader.classList.add('header-hidden');
+      mobileNav?.classList.remove('open');
+    } else {
+      siteHeader.classList.remove('header-hidden');
+    }
+
+    lastScrollY = currentScrollY;
+  }
+
+  headerTicking = false;
+}
+
+window.addEventListener(
+  'scroll',
+  () => {
+    if (headerTicking) return;
+    headerTicking = true;
+    requestAnimationFrame(updateHeaderVisibility);
+  },
+  { passive: true }
+);
