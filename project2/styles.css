@@ -1347,3 +1347,33 @@ figure {
     transition: none;
   }
 }
+
+/* =========================================================
+   Header：往下滑隱藏、往上滑顯示
+   ========================================================= */
+.site-header {
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.28s ease;
+  will-change: transform, opacity;
+}
+
+.site-header.header-hidden {
+  transform: translateY(calc(-100% - 100px));
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 平板 / 手機 */
+@media (max-width: 980px) {
+  .site-header.header-hidden {
+    transform: translateY(calc(-100% - 80px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header {
+    transition: none;
+  }
+}
+
